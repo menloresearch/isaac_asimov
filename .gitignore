@@ -1,0 +1,37 @@
+# Python
+**/__pycache__/
+**/*.egg-info/
+**/.pytest_cache/
+*.py[cod]
+
+# Isaac Sim / Isaac Lab generated files
+_isaac_sim*
+_build/
+.lastformat
+*.usd
+*.usda
+*.usdc
+*.usdz
+
+# Training outputs and checkpoints
+logs/
+outputs/
+videos/
+wandb/
+*.pt
+*.onnx
+
+# External robot model; fetch it using the README instructions.
+assets/asimov-1/
+
+# Motion data is ignored by default except for the one training clip in this repository.
+*.npz
+!source/isaac_asimov/isaac_asimov/tasks/locomotion/motions/policy_delay_walk_slow.npz
+
+# IDE and operating system files
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/.gitignore
+!.vscode/extensions.json
+!.vscode/tasks.json

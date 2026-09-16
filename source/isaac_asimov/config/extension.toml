@@ -1,0 +1,21 @@
+[package]
+version = "0.1.0"
+category = "isaaclab"
+readme = "README.md"
+title = "Isaac Asimov"
+author = "Menlo Research"
+maintainer = "Menlo Research"
+description = "Standalone Isaac Lab locomotion and AMP training environments for Asimov-1."
+repository = "https://github.com/menloresearch/isaac_asimov"
+keywords = ["extension", "isaaclab", "robotics", "reinforcement-learning", "amp"]
+
+[dependencies]
+"isaaclab" = {}
+"isaaclab_rl" = {}
+"isaaclab_tasks" = {}
+
+[core]
+reloadable = false
+
+[[python.module]]
+name = "isaac_asimov"

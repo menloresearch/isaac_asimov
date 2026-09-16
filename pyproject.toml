@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+known_first_party = ["isaac_asimov"]
+known_isaaclabparty = ["isaaclab", "isaaclab_rl", "isaaclab_tasks"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "ISAACLABPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.pytest.ini_options]
+pythonpath = ["source/isaac_asimov"]
+testpaths = ["tests"]
+
+[tool.pyright]
+exclude = ["**/__pycache__", "**/docs", "**/logs", ".git", ".vscode"]
+typeCheckingMode = "basic"
+pythonVersion = "3.10"
+pythonPlatform = "Linux"
+reportMissingImports = "none"
+reportMissingModuleSource = "none"

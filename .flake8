@@ -1,0 +1,8 @@
+[flake8]
+show-source = True
+statistics = True
+per-file-ignores = */__init__.py:F401,F403
+ignore = E203,E402,E501,W503,D401
+max-line-length = 120
+max-complexity = 30
+exclude = .git,.vscode,docs,logs
