@@ -21,9 +21,6 @@ wandb/
 *.pt
 *.onnx
 
-# External robot model; fetch it using the README instructions.
-assets/asimov-1/
-
 # Motion data is ignored by default except for the one training clip in this repository.
 *.npz
 !source/isaac_asimov/isaac_asimov/tasks/locomotion/motions/policy_delay_walk_slow.npz
