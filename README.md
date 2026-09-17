@@ -25,8 +25,12 @@ to reuse, want conda instead of uv, or just want to understand what each
 install step does: **[Advanced Install](INSTALL.md)**.
 
 ## Train
+
+Before starting a training run, run a quick test to ensure the full pipeline is functional. The following code will fire off a short training run with a small number of environments which should take ~10 minutes on a 4090. 
+
 **Quick Test**
-create a small job to see if the full training code is working end2end. These settings should work for most gpus and finished relatively quickly.
+
+This is a small job to see if the full training code is working. These settings should work for most gpus and finished relatively quickly.
 
 ```bash
 # AMP (recommended)
@@ -34,7 +38,9 @@ create a small job to see if the full training code is working end2end. These se
     --task Asimov1-Velocity-AMP-v0 --num_envs 128 --headless --max_iterations 100
 ```
 
-**Single GPU**
+### Single GPU Training Run
+
+Use this code to replicate the training run for our baseline policy using a single gpu.
 
 ```bash
 # AMP (recommended)
@@ -49,10 +55,11 @@ create a small job to see if the full training code is working end2end. These se
 Useful flags: `--max_iterations <n>`, `--seed <n>`, `--video` (record rollout
 clips during training).
 
-Note: We use 4096 environments to train our baseline locomotion policy using A6000 or pro 6000. You may need to reduce the number of environments if you are training on a gpu with less memory.
+Note: We use 4096 `num_envs` to train our baseline locomotion policy using A6000 or pro 6000. If you hit any out of memory errors, consider lowering the `num_envs`. However, this means that the policy may take longer to converge or may be less stable for the same number of iterations.
 
-**Multi-GPU / distributed** training via `--distributed` (two GPUs, 4096
-environments per GPU):
+### Multi-GPU Training Run 
+
+This code runs training via `--distributed` with two GPUs and 4096 environments per GPU. You should adjust the parameters according to the compute available to you.
 
 ```bash
 python -m torch.distributed.run --standalone --nnodes=1 --nproc_per_node=2 \
