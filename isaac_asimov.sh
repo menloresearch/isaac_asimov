@@ -11,7 +11,7 @@ usage() {
 
 case "${1:-}" in
     -i|--install)
-        "${PYTHON_EXE}" -m pip install -e "${ISAAC_ASIMOV_ROOT}/source/isaac_asimov"
+        uv pip install -e "${ISAAC_ASIMOV_ROOT}/source/isaac_asimov"
         ;;
     -l|--list)
         shift

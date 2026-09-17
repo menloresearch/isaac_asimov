@@ -1,0 +1,6 @@
+[submodule "third_party/asimov-1"]
+	path = third_party/asimov-1
+	url = https://github.com/menloresearch/asimov-1.git
+[submodule "third_party/IsaacLab"]
+	path = third_party/IsaacLab
+	url = https://github.com/isaac-sim/IsaacLab.git

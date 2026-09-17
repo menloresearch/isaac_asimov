@@ -5,45 +5,46 @@ PPO and adversarial motion priors (AMP).
 
 ## Install Isaac Sim and Isaac Lab
 
-These steps target Ubuntu 22.04+ (x86_64), with Conda and a compatible NVIDIA
-driver installed. Use Python 3.11, Isaac Sim 5.1.0, and Isaac Lab `main`
-(currently reporting 2.3.2, with RSL-RL 5 support). This project pins RSL-RL 5.0.1.
+These steps target Ubuntu 22.04+ (x86_64), with [uv](https://docs.astral.sh/uv/)
+and a compatible NVIDIA driver installed. Use Python 3.11, Isaac Sim 5.1.0,
+and the pinned Isaac Lab submodule (currently reporting 2.3.2, with RSL-RL 5
+support). This project pins RSL-RL 5.0.1.
+
+Isaac Lab and the `asimov-1` robot model are vendored as git submodules
+under `third_party/`, pinned to known-working commits. Initialize them:
+
+```bash
+git submodule update --init third_party/IsaacLab
+git submodule update --init --filter=blob:none third_party/asimov-1
+git -C third_party/asimov-1 sparse-checkout set sim-model
+```
 
 Create the environment and install Isaac Sim and CUDA-enabled PyTorch:
 
 ```bash
-conda create -n env_isaaclab python=3.11 -y
-conda activate env_isaaclab
-python -m pip install --upgrade pip
-python -m pip install "isaacsim[all,extscache]==5.1.0" --extra-index-url https://pypi.nvidia.com
-python -m pip install torch==2.7.0 torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu128
+uv venv --seed --python 3.11
+source .venv/bin/activate
+uv pip install "isaacsim[all,extscache]==5.1.0" --extra-index-url https://pypi.nvidia.com
+uv pip install torch==2.7.0 torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-From this project's root, install Isaac Lab in a sibling directory:
+Install Isaac Lab's RSL-RL extras into the active environment:
 
 ```bash
 sudo apt-get install -y cmake build-essential
-git clone --branch main https://github.com/isaac-sim/IsaacLab.git ../IsaacLab
-(cd ../IsaacLab && ./isaaclab.sh --install rsl_rl)
+(cd third_party/IsaacLab && ./isaaclab.sh --install rsl_rl)
 ```
 
-Keep `env_isaaclab` active for the remaining steps. See the
+Keep `.venv` active for the remaining steps. See the
 [official installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/pip_installation.html)
 for prerequisites and troubleshooting.
 
 ## Robot model
 
-From the project root, download the URDF and meshes into `assets/asimov-1`:
-
-```bash
-mkdir -p assets
-git clone --depth 1 --filter=blob:none --sparse \
-    https://github.com/menloresearch/asimov-1.git assets/asimov-1
-git -C assets/asimov-1 sparse-checkout set \
-    sim-model/urdf sim-model/assets/meshes
-```
-
-The robot configuration uses this location by default; no path changes are needed.
+The `asimov-1` submodule (initialized above) provides the URDF and meshes at
+`third_party/asimov-1/sim-model`, sparse-checked-out to avoid pulling the
+rest of that repo (CAD/fabrication files). The robot configuration uses this
+location by default; no path changes are needed.
 
 ## Quick start
 
@@ -53,7 +54,7 @@ Activate the environment in which Isaac Lab is installed, then install this
 extension in editable mode:
 
 ```bash
-conda activate env_isaaclab
+source .venv/bin/activate
 ./isaac_asimov.sh --install
 ```
 

@@ -12,7 +12,7 @@ from isaaclab.actuators import DelayedPDActuatorCfg
 from isaaclab.assets.articulation import ArticulationCfg
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[5]
-ASIMOV_1_MODEL_DIR = str(_REPOSITORY_ROOT / "assets" / "asimov-1" / "sim-model")
+ASIMOV_1_MODEL_DIR = str(_REPOSITORY_ROOT / "third_party" / "asimov-1" / "sim-model")
 ASIMOV_1_URDF_PATH = str(
     Path(os.environ.get("ASIMOV_1_MODEL_DIR", ASIMOV_1_MODEL_DIR)).expanduser() / "urdf" / "asimov_1.urdf"
 )
