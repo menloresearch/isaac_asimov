@@ -13,6 +13,8 @@ NVIDIA driver, [uv](https://docs.astral.sh/uv/) installed, and `sudo` access
 (used to install `cmake`/`build-essential`).
 
 ```bash
+git clone https://github.com/menloresearch/isaac_asimov.git
+cd isaac_asimov
 ./quick_install.sh
 ```
 
@@ -156,6 +158,16 @@ extension in editable mode:
 ```
 
 ## Train
+**Quick Test**
+create a small job to see if the full training code is working end2end. These settings should work for most gpus and finished relatively quickly.
+
+```bash
+# AMP (recommended)
+./isaac_asimov.sh --train \
+    --task Asimov1-Velocity-AMP-v0 --num_envs 128 --headless --max_iterations 100
+```
+
+**Single GPU**
 
 ```bash
 # AMP (recommended)
@@ -169,6 +181,8 @@ extension in editable mode:
 
 Useful flags: `--max_iterations <n>`, `--seed <n>`, `--video` (record rollout
 clips during training).
+
+Note: We use 4096 environments to train our baseline locomotion policy using A6000 or pro 6000. You may need to reduce the number of environments if you are training on a gpu with less memory.
 
 **Multi-GPU / distributed** training via `--distributed` (two GPUs, 4096
 environments per GPU):
@@ -192,6 +206,12 @@ Use `--checkpoint <path>` to select a specific checkpoint (`--target` is an
 alias), or `--onnx-output <path>` for an extra ONNX export.
 
 Checkpoints and logs are written to `logs/rsl_rl/<experiment_name>/<run>/`.
+
+## Troubleshooting
+The training code has been tested on the following GPUs:
+- NVIDIA RTX A6000
+- NVIDIA RTX PRO 6000
+- NVIDIA RTX 4090
 
 ## Acknowledgement
 
