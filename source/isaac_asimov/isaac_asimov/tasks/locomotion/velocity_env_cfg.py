@@ -391,7 +391,7 @@ class RewardsCfg:
     )
     pose = RewTerm(
         func=mdp.variable_posture,
-        weight=1.0,
+        weight=0.0,
         params={
             "asset_cfg": SceneEntityCfg("robot", joint_names=list(POSE_JOINT_PATTERNS)),
             "command_name": "twist",
