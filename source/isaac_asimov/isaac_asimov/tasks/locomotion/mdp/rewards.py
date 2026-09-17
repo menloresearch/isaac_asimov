@@ -391,7 +391,7 @@ class variable_posture(ManagerTermBase):
 
         if pose_weight_velocity_threshold is not None:
             pose_weight = torch.where(
-                linear_speed < pose_weight_velocity_threshold,
+                total_speed < pose_weight_velocity_threshold,
                 torch.full_like(linear_speed, pose_weight_slow),
                 torch.full_like(linear_speed, pose_weight_fast),
             )

@@ -403,11 +403,11 @@ class RewardsCfg:
             "disturbance_std_scale": 2.5,
             "std_standing": {".*": 0.05},
             "std_walking": {
-                r".*hip_pitch.*": 0.5, r".*hip_roll.*": 0.15, r".*hip_yaw.*": 0.15,
-                r".*knee.*": 0.5, r".*ankle_pitch.*": 0.15, r".*ankle_roll.*": 0.1,
-                r".*waist_yaw.*": 0.15,
+                r".*hip_pitch.*": 0.5, r".*hip_roll.*": 0.22, r".*hip_yaw.*": 0.3,
+                r".*knee.*": 0.5, r".*ankle_pitch.*": 0.15, r".*ankle_roll.*": 0.15,
+                r".*waist_yaw.*": 0.3,
                 r".*shoulder_pitch.*": 0.15, r".*shoulder_roll.*": 0.1,
-                r".*shoulder_yaw.*": 0.1, r".*elbow.*": 0.1, r".*wrist.*": 0.1,
+                r".*shoulder_yaw.*": 0.18, r".*elbow.*": 0.1, r".*wrist.*": 0.1,
             },
             "std_running": {
                 r".*hip_pitch.*": 0.5, r".*hip_roll.*": 0.25, r".*hip_yaw.*": 0.25,
