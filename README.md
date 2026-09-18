@@ -41,14 +41,14 @@ This is a small job to see if the full training code is working. These settings 
 
 Use this code to replicate the training run for our baseline policy using a single gpu.
 
-AMP (recommended)
+**AMP (recommended)**
 
 ```bash
 ./isaac_asimov.sh --train \
     --task Asimov1-Velocity-AMP-v0 --num_envs 4096 --headless
 ```
 
-Plain PPO baseline
+**Plain PPO baseline**
 
 ```bash
 ./isaac_asimov.sh --train \
