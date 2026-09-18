@@ -26,14 +26,13 @@ install step does: **[Advanced Install](INSTALL.md)**.
 
 ## Train
 
-Before starting a training run, run a quick test to ensure the full pipeline is functional. The following code will fire off a short training run with a small number of environments which should take ~10 minutes on a 4090. 
+Before starting a training run, run a quick test to ensure the full pipeline is functional. The following code will fire off a short training run with a small number of environments which should take ~10 minutes on a 4090.
 
 **Quick Test**
 
 This is a small job to see if the full training code is working. These settings should work for most gpus and finished relatively quickly.
 
 ```bash
-# AMP (recommended)
 ./isaac_asimov.sh --train \
     --task Asimov1-Velocity-AMP-v0 --num_envs 128 --headless --max_iterations 100
 ```
@@ -42,12 +41,16 @@ This is a small job to see if the full training code is working. These settings 
 
 Use this code to replicate the training run for our baseline policy using a single gpu.
 
+AMP (recommended)
+
 ```bash
-# AMP (recommended)
 ./isaac_asimov.sh --train \
     --task Asimov1-Velocity-AMP-v0 --num_envs 4096 --headless
+```
 
-# Plain PPO baseline
+Plain PPO baseline
+
+```bash
 ./isaac_asimov.sh --train \
     --task Asimov1-Velocity-v0 --num_envs 4096 --headless
 ```
@@ -57,7 +60,7 @@ clips during training).
 
 Note: We use 4096 `num_envs` to train our baseline locomotion policy using A6000 or pro 6000. If you hit any out of memory errors, consider lowering the `num_envs`. However, this means that the policy may take longer to converge or may be less stable for the same number of iterations.
 
-### Multi-GPU Training Run 
+### Multi-GPU Training Run
 
 This code runs training via `--distributed` with two GPUs and 4096 environments per GPU. You should adjust the parameters according to the compute available to you.
 
@@ -87,20 +90,6 @@ The training code has been tested on the following GPUs:
 - NVIDIA RTX PRO 6000
 - NVIDIA RTX 4090
 - NVIDIA RTX 3090
-
-**`libGLU.so.1: cannot open shared object file`**
-
-If a run fails with an error like:
-
-```
-Failed to open /.../isaacsim/extscache/omni.iray.libs-.../bin/iray/libneuray.so: libGLU.so.1: cannot open shared object file: No such file or directory
-```
-
-install the missing system library:
-
-```bash
-sudo apt-get update && sudo apt-get install -y libglu1-mesa
-```
 
 ## Acknowledgement
 
