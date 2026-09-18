@@ -29,10 +29,11 @@ versions may not be compatible.
 These steps target Ubuntu 22.04+ (x86_64), with
 [uv](https://docs.astral.sh/uv/) and a compatible NVIDIA driver installed.
 
-1. Install build tools needed to compile some Isaac Lab dependencies:
+1. Install build tools needed to compile some Isaac Lab dependencies, and
+   `libglu1-mesa`, which Isaac Sim's `omni.iray` extension needs at runtime:
 
    ```bash
-   sudo apt-get install -y cmake build-essential
+   sudo apt-get update && sudo apt-get install -y cmake build-essential libglu1-mesa
    ```
 
 2. Fetch Isaac Lab, pinned to a known-working commit (skip this if using
@@ -75,10 +76,11 @@ for prerequisites and troubleshooting.
 These steps target Ubuntu 22.04+ (x86_64), with Conda and a compatible
 NVIDIA driver installed.
 
-1. Install build tools needed to compile some Isaac Lab dependencies:
+1. Install build tools needed to compile some Isaac Lab dependencies, and
+   `libglu1-mesa`, which Isaac Sim's `omni.iray` extension needs at runtime:
 
    ```bash
-   sudo apt-get install -y cmake build-essential
+   sudo apt-get update && sudo apt-get install -y cmake build-essential libglu1-mesa
    ```
 
 2. Fetch Isaac Lab, pinned to a known-working commit (skip this if using

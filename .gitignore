@@ -3,6 +3,7 @@
 **/*.egg-info/
 **/.pytest_cache/
 *.py[cod]
+.venv
 
 # Isaac Sim / Isaac Lab generated files
 _isaac_sim*

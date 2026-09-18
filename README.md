@@ -79,6 +79,21 @@ The training code has been tested on the following GPUs:
 - NVIDIA RTX A6000
 - NVIDIA RTX PRO 6000
 - NVIDIA RTX 4090
+- NVIDIA RTX 3090
+
+**`libGLU.so.1: cannot open shared object file`**
+
+If a run fails with an error like:
+
+```
+Failed to open /.../isaacsim/extscache/omni.iray.libs-.../bin/iray/libneuray.so: libGLU.so.1: cannot open shared object file: No such file or directory
+```
+
+install the missing system library:
+
+```bash
+sudo apt-get update && sudo apt-get install -y libglu1-mesa
+```
 
 ## Acknowledgement
 
