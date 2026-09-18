@@ -9,7 +9,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 cd "${ROOT}"
 
-sudo apt-get install -y cmake build-essential
+sudo apt-get update && sudo apt-get install -y cmake build-essential libglu1-mesa
 
 git submodule update --init third_party/IsaacLab
 git submodule update --init --filter=blob:none third_party/asimov-1
