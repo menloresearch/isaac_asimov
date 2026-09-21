@@ -53,8 +53,8 @@ ASIMOV_1_JOINT_NAMES = [
 ASIMOV_1_ACTUATORS = {
     "hip_pitch": DelayedPDActuatorCfg(
         joint_names_expr=[".*_hip_pitch_joint"],
-        stiffness=150.0,
-        damping=5.0,
+        stiffness=200,
+        damping=15.00,
         effort_limit=45.0,
         armature=0.0698,
         friction=0.70,
@@ -63,8 +63,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "hip_roll": DelayedPDActuatorCfg(
         joint_names_expr=[".*_hip_roll_joint"],
-        stiffness=150.0,
-        damping=5.0,
+        stiffness=200,
+        damping=15.00,
         effort_limit=45.0,
         armature=0.1400,
         friction=0.20,
@@ -73,8 +73,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "hip_yaw": DelayedPDActuatorCfg(
         joint_names_expr=[".*_hip_yaw_joint"],
-        stiffness=150.0,
-        damping=5.0,
+        stiffness=204.69,
+        damping=15.00,
         effort_limit=28.0,
         armature=0.0687,
         friction=0.70,
@@ -83,8 +83,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "knee": DelayedPDActuatorCfg(
         joint_names_expr=[".*_knee_joint"],
-        stiffness=150.0,
-        damping=5.0,
+        stiffness=250,
+        damping=15.00,
         effort_limit=45.0,
         armature=0.0330,
         friction=0.70,
@@ -93,8 +93,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "ankle_pitch": DelayedPDActuatorCfg(
         joint_names_expr=[".*_ankle_pitch_joint"],
-        stiffness=110.0,
-        damping=5.0,
+        stiffness=191.08,
+        damping=12.16,
         effort_limit=40.0,
         armature=0.0484,
         friction=0.40,
@@ -103,8 +103,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "ankle_roll": DelayedPDActuatorCfg(
         joint_names_expr=[".*_ankle_roll_joint"],
-        stiffness=110.0,
-        damping=5.0,
+        stiffness=191.08,
+        damping=12.16,
         effort_limit=17.0,
         armature=0.0484,
         friction=0.40,
@@ -113,8 +113,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "waist": DelayedPDActuatorCfg(
         joint_names_expr=["waist_yaw_joint"],
-        stiffness=65.0,
-        damping=5.0,
+        stiffness=201.47,
+        damping=15.00,
         effort_limit=40.0,
         armature=0.0698,
         friction=0.70,
@@ -123,8 +123,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "shoulder_pitch": DelayedPDActuatorCfg(
         joint_names_expr=[".*_shoulder_pitch_joint"],
-        stiffness=57.0,
-        damping=5.0,
+        stiffness=100.45,
+        damping=15.00,
         effort_limit=30.0,
         armature=0.1400,
         friction=0.20,
@@ -133,8 +133,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "shoulder_roll": DelayedPDActuatorCfg(
         joint_names_expr=[".*_shoulder_roll_joint"],
-        stiffness=86.0,
-        damping=5.0,
+        stiffness=100,
+        damping=5,
         effort_limit=25.0,
         armature=0.0330,
         friction=0.70,
@@ -143,7 +143,7 @@ ASIMOV_1_ACTUATORS = {
     ),
     "shoulder_yaw": DelayedPDActuatorCfg(
         joint_names_expr=[".*_shoulder_yaw_joint"],
-        stiffness=96.0,
+        stiffness=100,
         damping=5.0,
         effort_limit=20.0,
         armature=0.0687,
@@ -153,8 +153,8 @@ ASIMOV_1_ACTUATORS = {
     ),
     "elbow_wrist": DelayedPDActuatorCfg(
         joint_names_expr=[".*_elbow_joint", ".*_wrist_yaw_joint"],
-        stiffness=40.0,
-        damping=2.0,
+        stiffness=95.54,
+        damping=6.08,
         effort_limit=12.0,
         armature=0.0242,
         friction=0.40,
