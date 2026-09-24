@@ -30,7 +30,7 @@ Before starting a training run, run a quick test to ensure the full pipeline is 
 
 **Quick Test**
 
-This is a small job to see if the full training code is working. These settings should work for most gpus and finished relatively quickly.
+This is a small job to see if the full training code is working. These settings should work for most GPUs and finish relatively quickly.
 
 ```bash
 ./isaac_asimov.sh --train \
@@ -39,7 +39,7 @@ This is a small job to see if the full training code is working. These settings 
 
 ### Single GPU Training Run
 
-Use this code to replicate the training run for our baseline policy using a single gpu.
+Use this code to replicate the training run for our baseline policy using a single GPU.
 
 **AMP (recommended)**
 
