@@ -130,6 +130,15 @@ git submodule update --init --filter=blob:none third_party/asimov-1
 git -C third_party/asimov-1 sparse-checkout set sim-model
 ```
 
+To use a robot model stored elsewhere, set `ASIMOV_1_MODEL_DIR` to a
+`sim-model` directory containing `urdf/asimov_1.urdf`. This is also needed
+for non-editable installs, since the default path is resolved relative to
+this repository's checkout:
+
+```bash
+export ASIMOV_1_MODEL_DIR=/path/to/asimov-1/sim-model
+```
+
 ### Install this extension
 
 With the environment from either approach above still active, install this
