@@ -1,4 +1,14 @@
-# Isaac Asimov
+# Asimov 1 Locomotion
+
+Asimov 1 is an open-source humanoid robot developed by
+[Menlo Research](https://menlo.ai/). This repository provides the
+training and evaluation code for its locomotion policies, so you can
+train policies in simulation and deploy them to the real robot.
+
+Get your own Asimov 1.
+[Order now](https://menlo.ai/order).
+
+## Isaac Asimov
 
 Standalone Isaac Lab extension for training Asimov-1 locomotion policies with
 PPO and adversarial motion priors (AMP).
@@ -100,3 +110,9 @@ This repository is built upon the support and contributions of the following ope
 - [whole_body_tracking](https://github.com/HybridRobotics/whole_body_tracking): Versatile humanoid control framework for motion tracking.
 - [beyondAMP](https://github.com/Renforce-Dynamics/beyondAMP): Referenced for AMP-based motion imitation.
 - [mjlab](https://github.com/mujocolab/mjlab): MuJoCo-based training utilities and references.
+
+## Community
+
+We're planning community livestreams where we’ll test policies
+contributed by developers on the real Asimov 1. [Join the community
+to share your work](https://discord.gg/3wTVbHabtn), discuss experiments, and hear about upcoming sessions.
